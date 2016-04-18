@@ -28,3 +28,13 @@
   content: "";
   padding: 0;
 }
+
+.login-content {
+  padding: 20px;
+  position: absolute;
+  background-color: #1b6d85;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
