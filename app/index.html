@@ -16,24 +16,8 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <div ng-view></div>
 
-  <div ng-controller="loginCtrl as loginCtrl">
-
-    <div class="login-content">
-      <form novalidate>
-        User Name:<br>
-        <input type="text" placeholder="Enter your name" ng-model="loginCtrl.factory.user.name" required><br>
-        Password:<br>
-        <input type="password" placeholder="Enter password" ng-model="loginCtrl.factory.user.pass" required><br>
-        <button ng-click="loginCtrl.login()">Login</button>
-      </form>
-    </div>
-
-  </div>
-  <div>
-
-  </div>
+  <div ng-controller="loginCtrl as loginCtrl" ng-view></div>
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>

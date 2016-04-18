@@ -1,0 +1,9 @@
+<div class="login-content">
+    <ng-form novalidate>
+        User Name:<br>
+        <input type="text" placeholder="Enter your name" ng-model="loginCtrl.factory.user.name" required><br>
+        Password:<br>
+        <input type="password" placeholder="Enter password" ng-model="loginCtrl.factory.user.pass" required><br>
+        <button ng-click="loginCtrl.login()">Login</button>
+    </ng-form>
+</div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testApp').controller('loginCtrl',function(credentialFactory){
+angular.module('testApp').controller('loginCtrl',function(credentialFactory,$location){
    console.log('loginCtrl');
    this.factory = credentialFactory;
 
@@ -14,6 +14,11 @@ angular.module('testApp').controller('loginCtrl',function(credentialFactory){
          }
       }
       this.factory.user = new UserVO(0,"","");
+
+      if(isLoginValid){
+         $location.url('/content');
+      }
+      //window.location = "index.html#/content";
 
       console.log("login is valid",isLoginValid);
    }

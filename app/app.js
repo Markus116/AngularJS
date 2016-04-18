@@ -6,5 +6,14 @@ var app = angular.module('testApp', [
   'testApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider
+      .when('/login',{
+        templateUrl:'login/login.html',
+        controller:'loginCtrl'
+      })
+      .when('/content',{
+        templateUrl:'login/content.html',
+        controller:'loginCtrl'
+      })
+      .otherwise({redirectTo: '/login'});
 }]);
