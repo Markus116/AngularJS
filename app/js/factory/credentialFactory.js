@@ -1,14 +1,22 @@
 'use strict';
 
-angular.module('testApp').factory('credentialFactory',function($http){
-    console.log("credentialFactory");
-    var service = {};
-    $http.get('json/credentials.json')
-        .then(function (res) {
-            service.credentials = res.data;
-        });
+(function (){
+    angular.module('testApp').factory('credentialFactory',['$http',initCredentialFactory]);
 
-    service.user = new UserVO(0,"","");
-    console.log("service",service);
-    return service;
-});
+    function initCredentialFactory($http){
+        console.log("credentialFactory");
+        var service = {};
+
+        $http.get('json/credentials.json')
+            .success(function successFn(res) {
+                service.credentials = res;
+            })
+            .error(function errorFn(res) {
+                service.credentials = {};
+            });
+
+        service.user = new UserVO(0,"asdklas","asdasdas");
+        console.log("service",service);
+        return service;
+    }
+})();

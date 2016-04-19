@@ -1,25 +1,26 @@
 'use strict';
 
-angular.module('testApp').controller('loginCtrl',function(credentialFactory,$location){
-   console.log('loginCtrl');
-   this.factory = credentialFactory;
+(function(){
+   angular.module('testApp').controller('loginCtrl',['credentialFactory','$scope','$location',initLoginCtrl]);
 
-   this.login = function(){
-      var isLoginValid = false;
-      for (var i = 0; i < this.factory.credentials.length; i++) {
-         var cred = this.factory.credentials[i];
-         if(cred.name === this.factory.user.name && cred.pass === this.factory.user.pass){
-            isLoginValid = true;
-            break;
+   function initLoginCtrl(credentialFactory,$scope,$location){
+      console.log('loginCtrl',credentialFactory);
+      $scope.factory = credentialFactory;
+      $scope.login = function(){
+         var isLoginValid = false;
+         for (var i = 0; i < $scope.factory.credentials.length; i++) {
+            var cred = $scope.factory.credentials[i];
+            if(cred.name === $scope.factory.user.name && cred.pass === $scope.factory.user.pass){
+               isLoginValid = true;
+               break;
+            }
          }
-      }
-      this.factory.user = new UserVO(0,"","");
+         $scope.factory.user = new UserVO(0,"","");
 
-      if(isLoginValid){
-         $location.url('/content');
+         if(isLoginValid){
+            $location.url('/content');
+         }
+         console.log("login is valid",isLoginValid);
       }
-      //window.location = "index.html#/content";
-
-      console.log("login is valid",isLoginValid);
    }
-});
+})();
