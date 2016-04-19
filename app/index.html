@@ -17,12 +17,7 @@
 </head>
 <body>
 
-  <div ng-controller="loginCtrl as loginCtrl">
-    <p>{{loginCtrl.factory.user.name}}</p>
-  </div>
-
-
-  <div ng-view></div>
+  <div ng-controller="loginCtrl as loginCtrl" ng-view></div>
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
