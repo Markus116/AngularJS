@@ -4,6 +4,7 @@
     angular.module("testApp").factory('contentFactory',['$http',initContentFactory]);
 
     function initContentFactory($http){
+        console.log("contentFactory");
         var service = {};
 
         $http.get('json/content.json')
@@ -14,6 +15,7 @@
                 service.contentCollection = {};
             });
 
+        console.log("contentFactory",service);
         return service;
     }
 })();

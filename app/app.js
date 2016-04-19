@@ -13,7 +13,7 @@ config(['$routeProvider', function($routeProvider) {
       })
       .when('/content',{
         templateUrl:'login/content.html',
-        controller:'loginCtrl'
+        controller:'contentCtrl'
       })
       .otherwise({redirectTo: '/login'});
 }]);

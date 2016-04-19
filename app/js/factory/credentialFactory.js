@@ -15,7 +15,7 @@
                 service.credentials = {};
             });
 
-        service.user = new UserVO(0,"asdklas","asdasdas");
+        service.user = new UserVO(0,"test1","test1");
         console.log("service",service);
         return service;
     }
